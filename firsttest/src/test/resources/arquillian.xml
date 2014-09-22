@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://jboss.org/schema/arquillian"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian
+    http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+
+    <container default="true" qualifier="openejb-embedded-4">
+        <configuration>
+            <property name="properties">
+                openejb.validation.output.level = VERBOSE
+
+                openjpa.jdbc.SynchronizeMappings = buildSchema
+                testDatabase = new://Resource?type=DataSource
+                testDatabase.JdbcDriver = org.h2.Driver
+                testDatabase.JdbcUrl = jdbc:h2:mem:test
+            </property>
+        </configuration>
+    </container>
+
+    <container qualifier="glassfish-embedded" default="false">
+        <configuration>
+            <property name="resourcesXml">src/test/resources/glassfish-resources.xml</property>
+            <property name="bindHttpPort">9999</property>
+        </configuration>
+    </container>
+
+</arquillian>
