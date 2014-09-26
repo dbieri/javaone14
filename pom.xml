@@ -8,6 +8,7 @@
 
     <modules>
         <module>firsttest</module>
+        <module>cdi-test</module>
     </modules>
 
 
