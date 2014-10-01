@@ -24,7 +24,7 @@ public class TripelStream {
                 .parallel()
                 .mapToObj(c -> computeTripelB(c))
                 .flatMap(l -> l.stream())
-                        //.sorted()
+                .sorted()
                 .collect(Collectors.toList());
 
         long duration = System.nanoTime() - starttime;

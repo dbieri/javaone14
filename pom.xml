@@ -12,6 +12,7 @@
         <module>cdi-test</module>
         <module>streams</module>
         <module>javafx-simple</module>
+        <module>adam-bien-igniter</module>
     </modules>
 
 
